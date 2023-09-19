@@ -1,0 +1,108 @@
+.header {
+    font-family:sans-serif;
+    font-weight: 75;
+    background-color: lightgray;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left:20px;
+    margin-left: 275px;
+    margin-right: 275px;
+}
+
+.info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: lightgray;
+    border-style: normal;
+    border-radius: 10px;
+    border-width: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 500px ;
+    margin-left: 50px;
+}
+
+h2 {
+    font-family: sans-serif;
+    color: blue;
+    font-size: 25px;
+    font-weight: 100;
+    padding-left: 20px;
+    padding-bottom: 0px;
+}
+
+
+
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #1E2A38;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+.intro,
+.nutrition,
+.recipes,
+.fitness {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #1E2A38;
+}
+
+footer {
+    background-color: #1E2A38;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+} */
