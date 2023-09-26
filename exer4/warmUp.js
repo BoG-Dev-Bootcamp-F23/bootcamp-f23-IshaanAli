@@ -29,7 +29,7 @@ function toLetterGrade(numGrade) {
     return "D"
   } else {
     return "F"
-  }
+  } 
 }
 
 /**

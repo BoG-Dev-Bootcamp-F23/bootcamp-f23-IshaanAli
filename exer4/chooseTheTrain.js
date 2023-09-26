@@ -109,3 +109,4 @@ function updateLineColor(arrivals) {
 console.log(getKeysToArr(railArray));
 console.log(getTrainComingIn1Minute(railArray));
 console.log(updateLineColor(railArray));
+ 
