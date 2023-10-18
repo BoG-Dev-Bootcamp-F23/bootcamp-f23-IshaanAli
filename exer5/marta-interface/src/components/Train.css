@@ -1,0 +1,182 @@
+/* .allLeftContent {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-bottom-width: 5px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    margin-left: 50px;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-bottom-width: 5px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    margin-left: 50px;
+}
+
+.leftContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-right: 700px;
+    margin-left: 30px;
+}
+
+.leftTop {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 0px;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#station {
+    padding-left: 0px;
+}
+
+.arrow {
+    height: 50px;
+    width: 50px;
+    padding-top: 9px;
+}
+
+.direction {
+    font-size: 50px;
+    font-weight: bolder;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+.leftBottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+
+.rightContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 35px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: red;
+}
+
+.rightContent p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+ */
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    margin-left: 40px;
+    height: 125;
+    width: 1040px;
+}
+
+.right-content {
+    margin-top: 30px;
+}
+
+.direction {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.station-info {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.line-delayed {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    margin-left: 20px;
+}
+
+.train-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.station-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.line-delayed {
+    display: flex;
+    flex-direction: row;
+}
+
+.line {
+    color: white;
+    margin-right: 10px;
+    border-style: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: gold;
+}
+
+.minutes {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+    color: red;
+    margin: 0px;
+}
+
+.min {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    color: red;
+    margin: 0px;
+}
+
+.arrow {
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+

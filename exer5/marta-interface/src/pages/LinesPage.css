@@ -1,0 +1,15 @@
+.title {
+    font-size: 75px;
+    font-weight: 0;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 2px;
+    margin-bottom: 0px;
+}
+
+
+
+.pageContent {
+    display: flex;
+    flex-direction: row;
+}
