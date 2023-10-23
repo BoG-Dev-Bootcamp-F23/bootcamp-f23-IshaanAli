@@ -1,4 +1,4 @@
-import './NavBar.css';
+import './css/NavBar.css';
 
 export default function NavBar(props) {
     const {currColor, stationData} = props;

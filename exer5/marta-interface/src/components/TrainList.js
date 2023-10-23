@@ -1,6 +1,6 @@
 import Train from "../components/Train.js";
 import arrivals from "../server/trainData.js";
-import './TrainList.css'
+import './css/TrainList.css'
 
 export default function TrainList(props) {
     const {currColor, trainData} = props;

@@ -1,5 +1,5 @@
-import './Train.css'
-import arrow from './arrow.jpeg'
+import './css/Train.css'
+import arrow from './css/arrow.jpeg'
 export default function Train(props) {
     const {currColor, trainData} = props;
 
@@ -11,10 +11,17 @@ export default function Train(props) {
         }
     }
 
+    let colorKeys = {
+        "RED" : '#FF0000',
+        "BLUE" : '#4169E1',
+        "GOLD" : '#FFD700',
+        "GREEN" : '#228B22'
+    }
+
     return (
         <div className='content'>
             <div className='left-content'>
-                <p className='direction'>{trainData["DIRECTION"]}</p>
+                <p className='direction'>M</p>
                 <div className="train-info">
                     <div className='station-info'>
                         <p id="station">{trainData["STATION"]}  </p> 
@@ -22,7 +29,7 @@ export default function Train(props) {
                         <p>{trainData["DESTINATION"]}</p>
                     </div>
                     <div className='line-delayed'>
-                        <p className='line'>{(trainData["LINE"])}</p>
+                        <p style={{backgroundColor: colorKeys[currColor]}} className='line'>{(trainData["LINE"])}</p>
                         <p className='delayed'>{isOnTime()}</p>
                     </div>
                 </div>
