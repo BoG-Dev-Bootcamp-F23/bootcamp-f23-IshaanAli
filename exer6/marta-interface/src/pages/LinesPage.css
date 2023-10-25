@@ -1,0 +1,32 @@
+.title {
+    font-size: 75px;
+    font-family: serif;
+    font-weight: bolder;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 2px;
+    margin-bottom: 0px;
+}
+
+
+
+.pageContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.goldButton {
+    background-color: #FFD700;
+}
+
+.redButton {
+    background-color: #FF0000;
+}
+
+.blueButton {
+    background-color: #4169E1;
+}
+
+.greenButton {
+    background-color: #228B22;
+}
