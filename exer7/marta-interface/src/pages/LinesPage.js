@@ -1,4 +1,5 @@
 // get static data
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import './LinesPage.css'
