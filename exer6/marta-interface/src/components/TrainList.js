@@ -53,12 +53,12 @@ export default function TrainList(props) {
                         setScheduledFilter(false);
                     }
                     if (direction1Filter) {
-                        setFilteredData(data.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionFirst())));
+                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionFirst())));
                     }
                     if (direction2Filter) {
-                        setFilteredData(data.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionSecond())));
+                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionSecond())));
                     } else {
-                        setFilteredData(data.filter(arrival => arrival["WAITING_TIME"] === "Arriving"));
+                        setFilteredData(data?.filter(arrival => arrival["WAITING_TIME"] === "Arriving"));
                     }
                 }}><p>Arriving</p></button>
                 <button className="scheduled" style={{backgroundColor: (scheduledFilter) ? 'black' : '#EFEFEF', color: (scheduledFilter) ? '#EFEFEF' : 'black'}} onClick={() => {
@@ -67,12 +67,12 @@ export default function TrainList(props) {
                         setArrivalsFilter(false);
                     }
                     if (direction1Filter) {
-                        setFilteredData(data.filter(arrival => (arrival["WAITING_TIME"] !== "Arriving" && arrival["DIRECTION"] === directionFirst())));
+                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] !== "Arriving" && arrival["DIRECTION"] === directionFirst())));
                     }
                     if (direction2Filter) {
-                        setFilteredData(data.filter(arrival => (arrival["WAITING_TIME"] !== "Arriving" && arrival["DIRECTION"] === directionSecond())));
+                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] !== "Arriving" && arrival["DIRECTION"] === directionSecond())));
                     } else {
-                        setFilteredData(data.filter(arrival => arrival["WAITING_TIME"] !== "Arriving"));
+                        setFilteredData(data?.filter(arrival => arrival["WAITING_TIME"] !== "Arriving"));
                     }
                 }}><p>Scheduled</p></button>
                 <button className="first-direction" style={{backgroundColor: (direction1Filter) ? 'black' : '#EFEFEF', color: (direction1Filter) ? '#EFEFEF' : 'black'}} onClick={() => {
@@ -81,12 +81,12 @@ export default function TrainList(props) {
                         setDirection2Filter(false);
                     }
                     if (arrivalsFilter) {
-                        setFilteredData(data.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionFirst().split("")[0])));
+                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionFirst().split("")[0])));
                     }
                     if (scheduledFilter) {
-                        setFilteredData(data.filter(arrival => (arrival["WAITING_TIME"] !== "Arriving" && arrival["DIRECTION"] === directionFirst().split("")[0])));
+                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] !== "Arriving" && arrival["DIRECTION"] === directionFirst().split("")[0])));
                     } else {
-                        setFilteredData(data.filter(arrival => arrival["DIRECTION"] === directionFirst().split("")[0]));
+                        setFilteredData(data?.filter(arrival => arrival["DIRECTION"] === directionFirst().split("")[0]));
                     }
                 }}><p>{directionFirst()}</p></button>
                 <button className="second-direction" style={{backgroundColor: (direction2Filter) ? 'black' : '#EFEFEF', color: (direction2Filter) ? '#EFEFEF' : 'black'}} onClick={() => {
@@ -95,12 +95,12 @@ export default function TrainList(props) {
                         setDirection1Filter(false);
                     }
                     if (arrivalsFilter) {
-                        setFilteredData(data.filter(arrival => (arrival["WAITING_TIME"] == "Arriving" && arrival["DIRECTION"] === directionSecond().split("")[0])));
+                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] == "Arriving" && arrival["DIRECTION"] === directionSecond().split("")[0])));
                     }
                     if (scheduledFilter) {
-                        setFilteredData(data.filter(arrival => ((arrival["WAITING_TIME"] !== "Arriving") && (arrival["DIRECTION"] === directionSecond().split("")[0]))));
+                        setFilteredData(data?.filter(arrival => ((arrival["WAITING_TIME"] !== "Arriving") && (arrival["DIRECTION"] === directionSecond().split("")[0]))));
                     } else {
-                        setFilteredData(data.filter(arrival => arrival["DIRECTION"] === directionSecond().split("")[0]));
+                        setFilteredData(data?.filter(arrival => arrival["DIRECTION"] === directionSecond().split("")[0]));
                     }
                 }}><p>{directionSecond()}</p></button>
             </div>

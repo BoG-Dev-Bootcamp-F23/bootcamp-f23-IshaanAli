@@ -15,10 +15,9 @@ export default function LinesPage() {
 		"GREEN" : '#228B22'
   	}
 
-	const [currColor, setCurrColor] = useState("GOLD");
+	const [currColor, setCurrColor] = useState("RED");
 	const [currStation, setCurrStation] = useState("ALL");
 
-	
 	return (
 		<div>
 			<p className='title'>{currColor}</p>
