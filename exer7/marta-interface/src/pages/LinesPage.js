@@ -1,7 +1,7 @@
 // get static data
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useNavigate, useParams } from "react-router-dom";
 import './LinesPage.css'
 import NavBar from '../components/NavBar.js';
 import TrainList from '../components/TrainList';
@@ -16,13 +16,17 @@ export default function LinesPage() {
 		"GREEN" : '#228B22'
   	}
 
-	const [currColor, setCurrColor] = useState("GOLD");
+	const navigate = useNavigate();
+	const params = useParams();
+	const [currColor, setCurrColor] = useState(params.lineColor.toUpperCase());
 	const [currStation, setCurrStation] = useState("ALL");
 
-	
 	return (
 		<div>
-			<p className='title'>{currColor}</p>
+			<div className='linesPageHeader'>
+				<p className='title'>{currColor}</p>
+				<p className='homeButton' onClick = {() => navigate("/Home")}>MARTA</p>
+			</div>
 			<div className='lines'>
 				<button className = 'goldButton' style={{borderWidth: (currColor === "GOLD") ? '6px' : '3px'}} onClick={() => {
 					setCurrColor("GOLD")

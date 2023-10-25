@@ -10,7 +10,7 @@ function App() {
     <div className="App">
         <BrowserRouter>
             <Routes>
-                <Route index element={<Home />} />
+                <Route path={'home'} index element={<Home />} />
                 <Route path={'about'} element={<About />} />
                 <Route path={'lines'}>
                     <Route path=":lineColor" element={<LinesPage />}></Route>
@@ -20,5 +20,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

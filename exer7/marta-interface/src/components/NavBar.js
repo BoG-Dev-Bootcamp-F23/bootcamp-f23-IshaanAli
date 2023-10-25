@@ -7,9 +7,8 @@ export default function NavBar(props) {
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [elementClicked, toggleElementClicked] = useState(false);
 
-    const stationsURL = " http://13.59.196.129:3001/stations/";
+    const stationsURL = "http://13.59.196.129:3001/stations/";
 
     async function getData() {
         const res = await fetch(stationsURL + currColor.toLowerCase());

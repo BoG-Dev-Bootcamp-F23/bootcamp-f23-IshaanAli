@@ -1,63 +1,58 @@
-# Exercise 6 - Advanced Marta Interface
+# Exercise 7 - Advanced Marta Interface (Continued)
+
+## Video Link
+https://youtu.be/l1rQGOC8IHg
 
 ## Description
-In this exercise, bootcampers will familiarize themselves with state management and hooks.
+In this exercise, bootcampers will familiarize themselves with routing.
 
 ## Submission
 See the submission instructions down below.
-- **Due Date**: 10-19-2023
+- **Due Date**: 10-24-2023
 
 ## Instructions
 
-Simple instructions: We are improving our Marta Interface from Exercise 5!
+Simple instructions: We are improving our Marta Interface from Exercises 5 and 6!
 
-To begin, please move a copy of your React app folder from Exercise 5 into Exercise 6.
+To begin, please move a copy of your React app folder from Exercise 6 into Exercise 7.
 
 You will need to initialize the React app again as it is not recognized as one after movement, to do this run `npm i` after you `cd` into your folder. Then, run `npm start` in the command line or terminal in that folder to see the app display.
 
-### Adding State and Filters
+### Two New Pages
 
-We are going to incorporate state to render the page based on each train line. Currently, we hardcode the line's state, but we want the user to be able to switch between lines on the interface. We do this by adding four buttons that will change state when clicked (one for each line color). Refer to the visual examples below to see how this would look like. Additionally, whenever a user switches between lines, we also want the filter buttons to change (between Northbound/SouthBound and Eastbound/Westbound). This can be done either through conditional rendering or state. For example, the green line should have the buttons "Arriving", "Scheduled", "Eastbound", "Westbound"; whereas gold should have "Arriving", "Scheduled", "Northbound", "Southbound." We recommend passing props into the `TrainList` component to handle these.
+Now that we are set up, we want to add two new pages! We will call these `Home.js` and `About.js`. 
 
-### Dynamic data and `useEffect`
+In `Home.js` you can create a simple MARTA homescreen page up to your own design or follow the Figma Page below that will have the form of a navbar that takes you to the `LinesPage.js` for each line with the display for `LinesPage.js` being the line that was clicked on in the navbar. There will also be a link to an About page at the top right of the home screen.
 
-We are no longer using static data! Instead, we are calling this URL: http://13.59.196.129:3001/. You can get the filtered trains for each line using this link by adding http://13.59.196.129:3001/arrivals/[line]; for example, to get the trains from the gold line, call http://13.59.196.129:3001/arrivals/gold. 
+In `About.js`, you will create a simple page that displays the MARTA map and some basic information about the MARTA's purpose on the page. This page will include a button somewhere linking back to the home page.
 
-To get data for stations, you can use http://13.59.196.129:3001/stations/[line]; for example, to get the stations from the gold line, you can call http://13.59.196.129:3001/stations/gold
-
-*Important note:* Previously, we learned how to call from an API using fetch(); however, React can have issues with rendering using fetch as if the called data has not arrived yet but is being asked to be displayed there will be an issue. To handle this we will incorporate useEffect()! We will have two more states added to LinesPage.js: loading and data, currently set to true and null. Then, we will add useEffect() below like so (where the line in the URL is a variable that changes based on the current state of the line from the line buttons):
+### Routing
+Install React Router by entering `npm install react-router-dom` in terminal. At the top of each page import router by doing `import { BrowserRouter, Route, Routes } from 'react-router-dom';`. Now, you can set up routes in the return of your display pages by doing
 
 ```
-//ADD MORE CODE TO ACCOUNT FOR LOADING
-useEffect(() => {
-        fetch("[URL]")
-        .then(response => response.json())
-        .then(data => setData(data))
-      },[])
+return (
+    <BrowserRouter>
+        <Routes>
+          <Route path={PATH1} element={<COMPONENT1 />} />
+          <Route path={PATH2} element={<COMPONENT2 />} />
+          <Route path={PATH3} element={<COMPONENT3 />} />
+        </Routes>
+    </BrowserRouter>
+  );
 ```
 
-### More filtering
+When we want to route to a page without stating the element we can use the `useNavigate()` hook! First, you will need to import it using `import { useNavigate } from "react-router-dom";`. Then, inside your function but above the return add `const navigate = useNavigate();`. When you want to link to a page, say inside a button, insert `navigate("/path");`.
 
-Our navbar is now going to be operational! Make it so that when you click on a station in the navbar, it will become highlighted, and the trains displayed are filtered to display only those currently approaching that station, so for Doraville, we only want trains with `{"STATION": "DORAVILLE"}`.
-
-We are going to make the buttons we created before operational. When a button is clicked it will filter the trains by the filter titled on the button. When a button is 'on', if it is clicked again the filter will go away. More than one button can be used to filter the data at a time, so make it identifiable that a button is currently "on" (you could do this by making the button color faded if it is on).
-
-As a bonus, once the rest of the code displays successfully, we recommend incorporating conditional rendering so that if the filters used on the trainlist result in an empty list of trains, then display something else to notify the user that there are no trains rather than just displaying an empty page. For example, you could add a "No Current Trains Match Filters" message.
+Incorporate some form of links between the three pages using React-Router-Dom and ensure that the home screen links to the `LinesPage.js` four separate times with four separate props representing the lines.
 
 **Requirements:**
-- Call the MARTA API by fetching from the link provided: http://13.59.196.129:3001/
-- Incorporate state buttons to display trains based on each line color (gold, red, green blue)
-- Make the navbar functional so that the trains are filtered by one station at a time
-- Make the four buttons from Exercise 5 functional so that the trains are filtered by one or more buttons at a time
-- Create a 0.5-2 minute demo video to showcase your project's functionality (this is just so that we don't have to go through and install dependencies / deal with versioning errors for every single exercise)
-- Bonus: Conditional rendering for when there are no trains to display
+- Create a `Home.js` and `About.js`.
+- Use React routing to link between `LinesPage.js`, `Home.js`, and `About.js`.
+- When routing from `Home.js` to `LinesPage.js` there needs to be four separate links titled by line and linking to `LinesPage.js` with each line's props.
+- Create a 0.5-2 minute demo video to showcase your project's functionality (this is again just so that we don't have to go through and install dependencies/deal with versioning errors for every exercise)
 
 ## Display Example
 
-**Gold**
+**Homescreen Figma:**
 
-<img width="500" alt="Screenshot 2023-10-16 at 10 08 13 PM" src="https://github.com/zinichakraborty/bootcampexercises-f23/assets/113480497/ab39f0c9-83d8-4232-90da-d026aca7ef7e">
-
-**Green**
-
-<img width="500" alt="Screenshot 2023-10-19 at 7 17 18 PM" src="https://github.com/BoG-Dev-Bootcamp-F23/bootcamp-f23/assets/113480497/043e7a06-614f-41f8-8ef9-5c6cf7523b02">
+<img width="604" alt="Screenshot 2023-10-19 at 12 15 00 PM" src="https://github.com/BoG-Dev-Bootcamp-F23/bootcamp-f23/assets/113480497/6f0ba248-c593-4934-b593-09d01008cbe8">
