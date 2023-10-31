@@ -8,7 +8,7 @@ export default function About() {
         <div className='about-content'>
             <div className='about-header'>
                 <h1 className='header-title'>About Marta</h1>
-                <p className='marta-home' onClick = {() => navigate("/Home")}>Marta Home</p>
+                <p className='marta-home' onClick = {() => navigate("/")}>Marta Home</p>
             </div>
             <div className='main-content'>
                 <div className='left'>

@@ -52,14 +52,20 @@ export default function TrainList(props) {
                     if (scheduledFilter) {
                         setScheduledFilter(false);
                     }
-                    if (direction1Filter) {
-                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionFirst())));
-                    }
-                    if (direction2Filter) {
-                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionSecond())));
-                    } else {
+                    if (!arrivalsFilter) {
                         setFilteredData(data?.filter(arrival => arrival["WAITING_TIME"] === "Arriving"));
                     }
+
+                    if (!arrivalsFilter && direction1Filter) {
+                        setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionFirst())));
+                    }
+                    // if (!direction1Filter && arrivalsFilter) {
+                    //     setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionFirst())));
+                    // } else if (!direction2Filter && arrivalsFilter) {
+                    //     setFilteredData(data?.filter(arrival => (arrival["WAITING_TIME"] === "Arriving" && arrival["DIRECTION"] === directionSecond())));
+                    // } else if (arrivalsFilter) {
+                    //     setFilteredData(data?.filter(arrival => arrival["WAITING_TIME"] === "Arriving"));
+                    // }
                 }}><p>Arriving</p></button>
                 <button className="scheduled" style={{backgroundColor: (scheduledFilter) ? 'black' : '#EFEFEF', color: (scheduledFilter) ? '#EFEFEF' : 'black'}} onClick={() => {
                     setScheduledFilter(!scheduledFilter)

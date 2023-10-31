@@ -10,7 +10,7 @@ function App() {
     <div className="App">
         <BrowserRouter>
             <Routes>
-                <Route path={'home'} index element={<Home />} />
+                <Route index element={<Home />} />
                 <Route path={'about'} element={<About />} />
                 <Route path={'lines'}>
                     <Route path=":lineColor" element={<LinesPage />}></Route>

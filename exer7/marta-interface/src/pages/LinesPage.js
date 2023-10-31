@@ -25,7 +25,7 @@ export default function LinesPage() {
 		<div>
 			<div className='linesPageHeader'>
 				<p className='title'>{currColor}</p>
-				<p className='homeButton' onClick = {() => navigate("/Home")}>MARTA</p>
+				<p className='homeButton' onClick = {() => navigate("/")}>MARTA</p>
 			</div>
 			<div className='lines'>
 				<button className = 'goldButton' style={{borderWidth: (currColor === "GOLD") ? '6px' : '3px'}} onClick={() => {
