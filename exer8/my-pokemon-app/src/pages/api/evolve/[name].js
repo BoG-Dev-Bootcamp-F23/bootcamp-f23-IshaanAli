@@ -13,13 +13,13 @@ export default async function handler(req, res) {
             if (data.chain.species.name == name && data.chain.evolves_to.length == 0) {
                 res.status(200).json({Evolves_to: 'There is no further evolution, so the pokemon remains ' + data.chain.species.name})
             } else if (data.chain.species.name == name && data.chain.evolves_to.length != 0) {
-                res.status(200).json({Evolves_to: data.chain.evolves_to[0].species.name})
+                res.status(200).json({Evolves_to: data.chain.evolves_to.map(evolution => evolution.species.name)})
             }
 
             if (data.chain.evolves_to[0].species.name == name && data.chain.evolves_to[0].evolves_to.length == 0) {
                 res.status(200).json({Evolves_to: 'There is no further evolution, so the pokemon remains ' + data.chain.evolves_to[0].species.name})
             } else if (data.chain.evolves_to[0].species.name == name && data.chain.evolves_to[0].evolves_to.length != 0) {
-                res.status(200).json({Evolves_to: data.chain.evolves_to[0].evolves_to[0].species.name})
+                res.status(200).json({Evolves_to: data.chain.evolves_to[0].evolves_to.map(evolution => evolution.species.name)})
             }
 
             if (data.chain.evolves_to[0].evolves_to[0].species.name == name && data.chain.evolves_to[0].evolves_to[0].evolves_to.length == 0) {
@@ -27,9 +27,11 @@ export default async function handler(req, res) {
             }
             
         } catch (e) {
-            res.status(400).json({error: 'The pokemon does not exist'})
+            res.status(400).json({error: 'This pokemon does not exist'})
         }
     } else {
         res.status(500).json({error: 'Something went wrong...'})
     }
 }
+
+//data.chain.evolves_to[0].species.name
