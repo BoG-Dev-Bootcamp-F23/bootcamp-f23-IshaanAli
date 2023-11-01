@@ -15,9 +15,9 @@ export default async function handler(req, res) {
             if (data1.stats[0].base_stat > data2.stats[0].base_stat) {
                 res.status(200).json({WinnerOfBattle: pokemon1})
             } else if (data2.stats[0].base_stat > data1.stats[0].base_stat) {
-                res.status(200).json({WinnerOfBattle: pokemon2})
+                res.status(200).json({'Winner Of Battle': pokemon2})
             } else {
-                res.status(200).json({WinnerOfBattle: 'The battle ended in a draw!'})
+                res.status(200).json({'Winner Of Battle': 'The battle ended in a draw!'})
             }
         } catch (e) {
             res.status(400).json({error: 'At least one of the pokemon does not exist'})
